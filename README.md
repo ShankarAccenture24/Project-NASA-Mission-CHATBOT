@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # NASA RAG Chat Project 
 
 A Retrieval-Augmented Generation (RAG) system with real-time evaluation capabilities. Create a complete RAG pipeline from document processing to interactive chat interface.
