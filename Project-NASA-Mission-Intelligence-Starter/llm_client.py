@@ -91,7 +91,7 @@ def generate_response(
 
 
 if __name__ == "__main__":
-    OPENAI_API_KEY="voc-570145424126677498479269d73ba36de0c3.00974578"
+    OPENAI_API_KEY="voc-********************************"
 
     try:
         response = generate_response(
