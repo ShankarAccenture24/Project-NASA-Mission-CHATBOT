@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NASA RAG Chat Project 
 
 A Retrieval-Augmented Generation (RAG) system with real-time evaluation capabilities. Create a complete RAG pipeline from document processing to interactive chat interface.
@@ -326,3 +327,7 @@ When submitting your completed project:
 ---
 
 **Good luck with your RAG system implementation!** This project will give you hands-on experience with modern AI application development, from data processing to user interface design. Take your time with each component and don't hesitate to experiment with different approaches and parameters.
+=======
+# Project-NASA-Mission-CHATBOT
+RAG-based NASA mission chatbot with semantic search, LLM grounding, and evaluation using RAGAS.
+>>>>>>> ee7edff92e5de9429b3796e6761b0e8829f6ac7f
