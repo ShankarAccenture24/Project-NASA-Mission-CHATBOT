@@ -1,0 +1,126 @@
+2026-04-14 16:40:14,120 - INFO - Initializing ChromaDB Embedding Pipeline...
+2026-04-14 16:40:19,896 - INFO - Created new collection: nasa_space_missions_text
+2026-04-14 16:40:19,897 - INFO - Starting text data processing with update mode: skip
+2026-04-14 16:40:19,897 - INFO - Scanning directory: data_text\apollo11
+2026-04-14 16:40:19,898 - INFO - Found 6 text files in apollo11
+2026-04-14 16:40:19,899 - INFO - Scanning directory: data_text\apollo13
+2026-04-14 16:40:19,900 - INFO - Found 3 text files in apollo13
+2026-04-14 16:40:19,900 - INFO - Scanning directory: data_text\challenger
+2026-04-14 16:40:19,902 - INFO - Found 3 text files in challenger
+2026-04-14 16:40:19,902 - INFO - Total text files to process: 12
+2026-04-14 16:40:19,902 - INFO - Files by mission:
+2026-04-14 16:40:19,902 - INFO -   apollo_11: 6 files
+2026-04-14 16:40:19,902 - INFO -   apollo_13: 3 files
+2026-04-14 16:40:19,903 - INFO -   challenger: 3 files
+2026-04-14 16:40:19,903 - INFO - Processing file: data_text\apollo11\19900066485_textract_full_text.txt
+2026-04-14 16:40:22,451 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:22,470 - INFO - Retrying request to /embeddings in 0.390507 seconds
+2026-04-14 16:40:23,029 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:23,030 - INFO - Retrying request to /embeddings in 0.871534 seconds
+2026-04-14 16:40:24,272 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:24,275 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:24,275 - ERROR - Error processing data_text\apollo11\19900066485_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:24,276 - INFO - Processing file: data_text\apollo11\a11transcript_pao_textract_full_text.txt
+2026-04-14 16:40:24,566 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:24,567 - INFO - Retrying request to /embeddings in 0.471018 seconds
+2026-04-14 16:40:25,284 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:25,284 - INFO - Retrying request to /embeddings in 0.986254 seconds
+2026-04-14 16:40:26,518 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:26,519 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:26,520 - ERROR - Error processing data_text\apollo11\a11transcript_pao_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:26,520 - INFO - Processing file: data_text\apollo11\a11transcript_tec_textract_full_text.txt
+2026-04-14 16:40:26,819 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:26,820 - INFO - Retrying request to /embeddings in 0.402811 seconds
+2026-04-14 16:40:27,438 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:27,438 - INFO - Retrying request to /embeddings in 0.864369 seconds
+2026-04-14 16:40:28,564 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:28,566 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:28,566 - ERROR - Error processing data_text\apollo11\a11transcript_tec_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:28,567 - INFO - Processing file: data_text\apollo11\a11transscript_cm_textract_full_text.txt
+2026-04-14 16:40:28,749 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:28,751 - INFO - Retrying request to /embeddings in 0.383672 seconds
+2026-04-14 16:40:29,275 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:29,277 - INFO - Retrying request to /embeddings in 0.840052 seconds
+2026-04-14 16:40:30,301 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:30,304 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:30,305 - ERROR - Error processing data_text\apollo11\a11transscript_cm_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:30,305 - INFO - Processing file: data_text\apollo11\Apollo_11_Flight_Plan_HSK_textract_full_text.txt
+2026-04-14 16:40:30,610 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:30,612 - INFO - Retrying request to /embeddings in 0.456507 seconds
+2026-04-14 16:40:31,216 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:31,217 - INFO - Retrying request to /embeddings in 0.787926 seconds
+2026-04-14 16:40:32,245 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:32,246 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:32,247 - ERROR - Error processing data_text\apollo11\Apollo_11_Flight_Plan_HSK_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:32,247 - INFO - Processing file: data_text\apollo11\NASA_NTRS_Archive_19710015566_textract_full_text.txt
+2026-04-14 16:40:32,552 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:32,553 - INFO - Retrying request to /embeddings in 0.496245 seconds
+2026-04-14 16:40:33,193 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:33,194 - INFO - Retrying request to /embeddings in 0.815876 seconds
+2026-04-14 16:40:34,151 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:34,153 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:34,154 - ERROR - Error processing data_text\apollo11\NASA_NTRS_Archive_19710015566_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:34,154 - INFO - Processing file: data_text\apollo13\AS13_CM_textract_full_text.txt
+2026-04-14 16:40:34,396 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:34,397 - INFO - Retrying request to /embeddings in 0.380453 seconds
+2026-04-14 16:40:35,012 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:35,014 - INFO - Retrying request to /embeddings in 0.879590 seconds
+2026-04-14 16:40:36,033 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:36,035 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:36,035 - ERROR - Error processing data_text\apollo13\AS13_CM_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:36,035 - INFO - Processing file: data_text\apollo13\AS13_PAO_textract_full_text.txt
+2026-04-14 16:40:36,248 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:36,250 - INFO - Retrying request to /embeddings in 0.461764 seconds
+2026-04-14 16:40:36,862 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:36,864 - INFO - Retrying request to /embeddings in 0.986152 seconds
+2026-04-14 16:40:37,992 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:37,994 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:37,994 - ERROR - Error processing data_text\apollo13\AS13_PAO_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:37,994 - INFO - Processing file: data_text\apollo13\AS13_TEC_textract_full_text.txt
+2026-04-14 16:40:38,294 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:38,296 - INFO - Retrying request to /embeddings in 0.389945 seconds
+2026-04-14 16:40:38,904 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:38,905 - INFO - Retrying request to /embeddings in 0.856202 seconds
+2026-04-14 16:40:39,926 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:39,928 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:39,929 - ERROR - Error processing data_text\apollo13\AS13_TEC_textract_full_text.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:39,930 - INFO - Processing file: data_text\challenger\107-AAG_STS-51L_Mission_Audio_transcript.txt
+2026-04-14 16:40:40,233 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:40,235 - INFO - Retrying request to /embeddings in 0.454247 seconds
+2026-04-14 16:40:40,851 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:40,852 - INFO - Retrying request to /embeddings in 0.869869 seconds
+2026-04-14 16:40:41,877 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:41,878 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:41,878 - ERROR - Error processing data_text\challenger\107-AAG_STS-51L_Mission_Audio_transcript.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:41,879 - INFO - Processing file: data_text\challenger\108-AAG_STS-51L_Mission_Audio_transcript.txt
+2026-04-14 16:40:42,059 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:42,060 - INFO - Retrying request to /embeddings in 0.492591 seconds
+2026-04-14 16:40:42,692 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:42,694 - INFO - Retrying request to /embeddings in 0.750299 seconds
+2026-04-14 16:40:43,610 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:43,611 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:43,611 - ERROR - Error processing data_text\challenger\108-AAG_STS-51L_Mission_Audio_transcript.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:43,612 - INFO - Processing file: data_text\challenger\109-AAG_STS-51L_Mission_Audio_transcript.txt
+2026-04-14 16:40:43,784 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:43,785 - INFO - Retrying request to /embeddings in 0.489185 seconds
+2026-04-14 16:40:44,417 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:44,418 - INFO - Retrying request to /embeddings in 0.963689 seconds
+2026-04-14 16:40:45,557 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-04-14 16:40:45,560 - ERROR - Error getting embedding: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:45,561 - ERROR - Error processing data_text\challenger\109-AAG_STS-51L_Mission_Audio_transcript.txt: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-14 16:40:45,562 - INFO - ============================================================
+2026-04-14 16:40:45,562 - INFO - PROCESSING COMPLETE
+2026-04-14 16:40:45,563 - INFO - ============================================================
+2026-04-14 16:40:45,563 - INFO - Files processed: 0
+2026-04-14 16:40:45,564 - INFO - Total chunks created: 0
+2026-04-14 16:40:45,564 - INFO - Documents added to collection: 0
+2026-04-14 16:40:45,564 - INFO - Documents updated in collection: 0
+2026-04-14 16:40:45,564 - INFO - Documents skipped (already exist): 0
+2026-04-14 16:40:45,565 - INFO - Errors: 12
+2026-04-14 16:40:45,565 - INFO - Processing time: 25.66 seconds
+2026-04-14 16:40:45,566 - INFO - 
+Mission breakdown:
+2026-04-14 16:40:45,571 - INFO - 
+Collection: nasa_space_missions_text
+2026-04-14 16:40:45,571 - INFO - Total documents in collection: 0
+2026-04-14 16:40:45,571 - INFO - Pipeline completed successfully!
