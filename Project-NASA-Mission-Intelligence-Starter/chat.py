@@ -227,11 +227,11 @@ def main():
                 
                 # Generate response
                 response = generate_response(
-                    openai_key, 
-                    prompt, 
-                    context, 
+                    prompt,
+                    context,
                     st.session_state.messages[:-1],
-                    model_choice
+                    openai_key=openai_key,
+                    model=model_choice
                 )
                 st.markdown(response)
                 
