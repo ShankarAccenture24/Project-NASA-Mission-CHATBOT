@@ -1,59 +1,84 @@
-"""
-Simplified RAGAS Evaluator - Works without complex dependencies
-"""
+    """
+    Simplified RAGAS Evaluator - Works without complex dependencies
+    """
 
-def evaluate_response_quality(question: str, answer: str, contexts: List[str]) -> Dict[str, float]:
-    """
-    Simplified evaluation that doesn't require RAGAS dependencies.
-    Provides basic quality metrics for RAG responses.
-    """
+    from typing import Dict, List
+
+    RAGAS_AVAILABLE = False
+
     try:
-        # Basic metrics that don't require external libraries
-        metrics = {}
+        from ragas import SingleTurnSample
+        try:
+            from ragas.scorers import ResponseRelevancy, Faithfulness
+        except ImportError:
+            try:
+                from ragas.metrics import ResponseRelevancy, Faithfulness
+            except ImportError:
+                from ragas import ResponseRelevancy, Faithfulness
+        RAGAS_AVAILABLE = True
+    except ImportError:
+        RAGAS_AVAILABLE = False
+    except Exception:
+        RAGAS_AVAILABLE = False
 
-        # Response length score (normalized)
-        answer_length = len(answer.split())
-        metrics['response_length'] = min(answer_length / 100.0, 1.0)  # Max score at 100 words
 
-        # Context utilization score
-        if contexts:
-            total_context_length = sum(len(ctx.split()) for ctx in contexts)
-            context_usage_ratio = min(answer_length / max(total_context_length, 1), 1.0)
-            metrics['context_utilization'] = context_usage_ratio
-        else:
-            metrics['context_utilization'] = 0.0
+    def _safe_extract_score(score_obj):
+        if isinstance(score_obj, dict):
+            if "score" in score_obj:
+                return float(score_obj["score"])
+            if "scores" in score_obj and isinstance(score_obj["scores"], dict):
+                return float(score_obj["scores"].get("score", 0.0))
+        if isinstance(score_obj, (int, float)):
+            return float(score_obj)
+        raise ValueError(f"Unsupported score object: {score_obj}")
 
-        # Question-answer relevance (simple keyword matching)
-        question_words = set(question.lower().split())
-        answer_words = set(answer.lower().split())
-        overlap = len(question_words.intersection(answer_words))
-        relevance_score = min(overlap / max(len(question_words), 1), 1.0)
-        metrics['relevance'] = relevance_score
 
-        # Answer completeness (checks for common question indicators)
-        completeness_indicators = ['because', 'due to', 'since', 'as', 'when', 'where', 'how', 'why']
-        completeness_score = sum(1 for indicator in completeness_indicators if indicator in answer.lower())
-        metrics['completeness'] = min(completeness_score / 3.0, 1.0)
+    def evaluate_response_quality(question: str, answer: str, contexts: List[str]) -> Dict[str, float]:
+        """
+        Evaluate response quality using RAGAS metrics when available.
+        Falls back to heuristic scoring if the RAGAS library is unavailable.
+        """
+        try:
+            if RAGAS_AVAILABLE:
+                sample = SingleTurnSample(
+                    query=question,
+                    response=answer,
+                    sources=[{"text": c} if isinstance(c, str) else c for c in (contexts or [])]
+                )
 
-        # Overall quality score (weighted average)
-        weights = {
-            'response_length': 0.2,
-            'context_utilization': 0.3,
-            'relevance': 0.3,
-            'completeness': 0.2
-        }
+                relevance_result = ResponseRelevancy().score(sample)
+                faithfulness_result = Faithfulness().score(sample)
 
-        overall_score = sum(metrics[metric] * weight for metric, weight in weights.items())
-        metrics['overall_quality'] = overall_score
+                response_relevancy = min(max(_safe_extract_score(relevance_result), 0.0), 1.0)
+                faithfulness = min(max(_safe_extract_score(faithfulness_result), 0.0), 1.0)
+                return {
+                    "response_relevancy": response_relevancy,
+                    "faithfulness": faithfulness,
+                    "overall_quality": (response_relevancy + faithfulness) / 2.0
+                }
 
-        return metrics
+            question_words = set(question.lower().split())
+            answer_words = set(answer.lower().split())
+            overlap = len(question_words.intersection(answer_words))
+            relevance_score = min(overlap / max(len(question_words), 1), 1.0)
 
-    except Exception as e:
-        return {
-            "error": f"Evaluation failed: {str(e)}",
-            "response_length": 0.5,
-            "context_utilization": 0.5,
-            "relevance": 0.5,
-            "completeness": 0.5,
-            "overall_quality": 0.5
-        }
+            contexts_text = " ".join(contexts) if contexts else ""
+            context_words = set(contexts_text.lower().split())
+            faithfulness_score = 0.0
+            if context_words and answer_words:
+                faithfulness_score = min(len(answer_words.intersection(context_words)) / max(len(answer_words), 1), 1.0)
+
+            overall_quality = (relevance_score + faithfulness_score) / 2.0
+            return {
+                "response_relevancy": relevance_score,
+                "faithfulness": faithfulness_score,
+                "overall_quality": overall_quality,
+                "note": "RAGAS library unavailable; using fallback heuristic evaluation"
+            }
+
+        except Exception as e:
+            return {
+                "error": f"Evaluation failed: {str(e)}",
+                "response_relevancy": 0.0,
+                "faithfulness": 0.0
+            }
