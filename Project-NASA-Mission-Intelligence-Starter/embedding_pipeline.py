@@ -60,24 +60,6 @@ class ChromaEmbeddingPipelineTextOnly:
             chunk_size: Maximum size of text chunks
             chunk_overlap: Overlap between chunks
         """
-    def __init__(self, 
-                 openai_api_key: str,
-                 chroma_persist_directory: str = "./chroma_db",
-                 collection_name: str = "nasa_space_missions_text",
-                 embedding_model: str = "text-embedding-3-small",
-                 chunk_size: int = 1000,
-                 chunk_overlap: int = 200):
-        """
-        Initialize the embedding pipeline
-        
-        Args:
-            openai_api_key: OpenAI API key
-            chroma_persist_directory: Directory to persist ChromaDB
-            collection_name: Name of the ChromaDB collection
-            embedding_model: OpenAI embedding model to use
-            chunk_size: Maximum size of text chunks
-            chunk_overlap: Overlap between chunks
-        """
         # Initialize OpenAI client
         self.openai_client = OpenAI(api_key=openai_api_key)
 
