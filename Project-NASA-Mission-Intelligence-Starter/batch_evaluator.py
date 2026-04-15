@@ -75,7 +75,8 @@ def run_batch_evaluation(openai_key, collection_name="nasa_space_missions_text",
             answer = generate_response(
                 user_message=question,
                 context=context,
-                conversation_history=[]
+                conversation_history=[],
+                openai_key=openai_key
             )
 
             # Extract contexts for evaluation
@@ -127,7 +128,7 @@ def run_batch_evaluation(openai_key, collection_name="nasa_space_missions_text",
 
         for metric in sorted(metric_sums.keys()):
             avg_score = metric_sums[metric] / metric_counts[metric]
-            print(".3f")
+            print(f"  - {metric}: {avg_score:.3f}")
 
         # Category breakdown
         categories = {}
@@ -140,7 +141,7 @@ def run_batch_evaluation(openai_key, collection_name="nasa_space_missions_text",
         print(f"\n📂 Performance by Category:")
         for cat, scores in categories.items():
             avg_cat_score = np.mean(scores) if scores else 0
-            print(".3f")
+            print(f"  - {cat}: {avg_cat_score:.3f}")
 
         # Save detailed results
         output_file = "batch_evaluation_results.json"
@@ -155,7 +156,6 @@ def run_batch_evaluation(openai_key, collection_name="nasa_space_missions_text",
 
 
 if __name__ == "__main__":
-    # Get API key from environment or prompt
     import os
     openai_key = os.getenv("OPENAI_API_KEY")
 
@@ -166,13 +166,4 @@ if __name__ == "__main__":
 
     # Use mock mode by default to avoid ChromaDB issues
     run_batch_evaluation(openai_key, use_mock=True)
-    # Get API key from environment
-    import os
-    openai_key = os.getenv("OPENAI_API_KEY")
-
-    if not openai_key:
-        print("❌ OPENAI_API_KEY not found in environment variables")
-        print("Please set it with: $env:OPENAI_API_KEY='your-key-here'")
-        exit(1)
-
     run_batch_evaluation(openai_key)
