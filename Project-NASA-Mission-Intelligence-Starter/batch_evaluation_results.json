@@ -1,0 +1,72 @@
+[
+  {
+    "question": "What was the objective of Apollo 11?",
+    "category": "overview",
+    "answer": "Error generating response: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "scores": {
+      "response_length": 0.37,
+      "context_utilization": 0.8043478260869565,
+      "relevance": 0.14285714285714285,
+      "completeness": 0.3333333333333333,
+      "overall_quality": 0.4248281573498965
+    },
+    "context_length": 368,
+    "num_docs": 1
+  },
+  {
+    "question": "What caused the Apollo 13 mission emergency?",
+    "category": "emergency",
+    "answer": "Error generating response: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "scores": {
+      "response_length": 0.37,
+      "context_utilization": 0.8043478260869565,
+      "relevance": 0.14285714285714285,
+      "completeness": 0.3333333333333333,
+      "overall_quality": 0.4248281573498965
+    },
+    "context_length": 368,
+    "num_docs": 1
+  },
+  {
+    "question": "What happened during the Challenger disaster?",
+    "category": "disaster",
+    "answer": "Error generating response: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "scores": {
+      "response_length": 0.37,
+      "context_utilization": 0.8043478260869565,
+      "relevance": 0.16666666666666666,
+      "completeness": 0.3333333333333333,
+      "overall_quality": 0.4319710144927536
+    },
+    "context_length": 368,
+    "num_docs": 1
+  },
+  {
+    "question": "Who were the crew members of Apollo 11?",
+    "category": "crew",
+    "answer": "Error generating response: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "scores": {
+      "response_length": 0.37,
+      "context_utilization": 0.8043478260869565,
+      "relevance": 0.125,
+      "completeness": 0.3333333333333333,
+      "overall_quality": 0.4194710144927536
+    },
+    "context_length": 368,
+    "num_docs": 1
+  },
+  {
+    "question": "What was the timeline of Apollo 11 mission?",
+    "category": "timeline",
+    "answer": "Error generating response: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "scores": {
+      "response_length": 0.37,
+      "context_utilization": 0.8043478260869565,
+      "relevance": 0.125,
+      "completeness": 0.3333333333333333,
+      "overall_quality": 0.4194710144927536
+    },
+    "context_length": 368,
+    "num_docs": 1
+  }
+]

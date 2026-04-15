@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Env
+.env
+
+# API keys
+*.env
+
+# Chroma DB
+chroma_db/
+chroma_db_openai/
+
+# Logs
+*.log
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
